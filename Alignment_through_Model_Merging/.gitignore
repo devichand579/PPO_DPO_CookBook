@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment variables
+.env
+
+# Virtual Environment
+venv/
+env/
+
+# Model checkpoints and large files
+*.pt
+*.pth
+*.bin
+*.ckpt
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Local configuration
+config.local.yaml
