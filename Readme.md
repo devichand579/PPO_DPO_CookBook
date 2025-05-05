@@ -9,69 +9,81 @@ Detailed implementation guides are available in the `cookbooks` directory:
 - [Alignment through Model Merging](cookbooks/Alignment_through_Model_Merging/README.md) - Implementation of RESTA (REpresentation-level Safety Through Addition) methodology
 - [RLHF and DPO](cookbooks/RLHF_DPO/README.md) - Direct Preference Optimization and PPO implementation for RLHF
 
-## 📖 Related Papers
+## 📖 Research Papers
 
-### Model Hijacking
-1. [Two-in-one: a model hijacking attack against text generation models](https://dl.acm.org/doi/10.5555/3620237.3620362)
+### 🔒 Model Hijacking
+| Paper | Summary |
+|-------|---------|
+| [Two-in-one: Model Hijacking Attack](https://dl.acm.org/doi/10.5555/3620237.3620362) | Demonstrates how shared text generation models can be hijacked to produce malicious outputs while maintaining normal behavior for legitimate users. Proposes novel attack vectors and defense mechanisms for model sharing platforms. |
 
-### White-Box Adversarial Attacks
-1. [HotFlip: White-Box Adversarial Examples for Text Classification](https://aclanthology.org/P18-2006/)
-2. [Is BERT Really Robust? A Strong Baseline for Natural Language Attack on Text Classification and Entailment](https://arxiv.org/abs/1907.11932)
-3. [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/html/2307.15043v2)
-4. [AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models](https://arxiv.org/abs/2310.04451)
+### ⚔️ White-Box Adversarial Attacks
+| Paper | Summary |
+|-------|---------|
+| [HotFlip](https://aclanthology.org/P18-2006/) | Introduces first gradient-based attack for text models. Uses character-level flips to generate adversarial examples while maintaining semantic similarity. Shows vulnerabilities in character-based models. |
+| [Is BERT Really Robust?](https://arxiv.org/abs/1907.11932) | Establishes strong baseline attack methods for NLP models. Shows BERT's vulnerabilities to simple word replacement strategies. Proposes TextFooler attack algorithm. |
+| [Universal Adversarial Attacks](https://arxiv.org/html/2307.15043v2) | Demonstrates transferable attacks that work across different aligned LLMs. Achieves high success rates with minimal queries through universal perturbation patterns. |
+| [AutoDAN](https://arxiv.org/abs/2310.04451) | Automated jailbreak prompt generation using evolutionary optimization. Can bypass content filters of commercial LLMs with high success rate. Shows systematic vulnerabilities in safety mechanisms. |
 
-### Black-box Adversarial Attack
+### 🎯 Black-box Adversarial Attacks
+| Paper | Summary |
+|-------|---------|
+| [Low-Resource Languages Jailbreak](https://arxiv.org/abs/2310.02446) | Exploits LLMs' handling of low-resource languages to bypass safety filters. Shows high success rate on GPT-4 using translated harmful prompts. |
+| [Refusal Training Generalization](https://arxiv.org/abs/2407.11969) | Analyzes how refusal training generalizes across tenses. Shows models often fail to maintain safety when prompts are rephrased in past tense. |
+| [Few-Shot Jailbreaks](https://arxiv.org/abs/2310.06387) | Demonstrates how aligned LLMs can be jailbroken with just a few in-context examples. Proposes defense strategies through better prompt design. |
+| [Black-box Text Attacks](https://arxiv.org/abs/1801.04354) | Early work on black-box attacks against text classifiers. Uses genetic algorithms to generate adversarial examples without model access. |
+| [Instruction-centric Responses](https://arxiv.org/abs/2402.15302) | Analyzes ethical vulnerabilities in instruction-following LLMs. Shows how safety guardrails can be circumvented through careful prompt engineering. |
+| [Twenty Queries Jailbreak](https://arxiv.org/abs/2310.08419) | Efficient black-box attack requiring only 20 queries to jailbreak LLMs. Uses optimization to find minimal successful attack sequences. |
 
-1. [Low-Resource Languages Jailbreak GPT-4](https://arxiv.org/abs/2310.02446)
-2. [Does Refusal Training in LLMs Generalize to the Past Tense?](https://arxiv.org/abs/2407.11969)
-3. [Jailbreak and Guard Aligned Language Models with Only Few In-Context Demonstrations](https://arxiv.org/abs/2310.06387)
-4. [Black-box Generation of Adversarial Text Sequences to Evade Deep Learning Classifiers](https://arxiv.org/abs/1801.04354)
-5. [How (un)ethical are instruction-centric responses of LLMs? Unveiling the vulnerabilities of safety guardrails to harmful queries](https://arxiv.org/abs/2402.15302)
-6. [Jailbreaking Black Box Large Language Models in Twenty Queries](https://arxiv.org/abs/2310.08419)
+### 🎯 Alignment Problems
+| Paper | Summary |
+|-------|---------|
+| [General Language Assistant](https://arxiv.org/abs/2112.00861) | Uses language models as experimental platform for alignment research. Proposes framework for studying alignment challenges in realistic settings. |
+| [Constitutional AI](https://arxiv.org/abs/2212.08073) | Introduces framework for training AI systems with ethical constraints. Uses AI feedback for alignment and proposes scalable approach to value learning. |
+| [Alignment Paradox](https://arxiv.org/abs/2405.20806) | Identifies fundamental tensions in AI alignment. Shows how certain alignment approaches can paradoxically increase risks. |
 
-### Alignment Problems
+### 👀 Scalable Oversight
+| Paper | Summary |
+|-------|---------|
+| [Measuring Oversight Progress](https://arxiv.org/abs/2211.03540) | Proposes metrics for evaluating scalable oversight methods. Analyzes current approaches and their limitations. |
+| [Weak LLMs Judging Strong LLMs](https://arxiv.org/html/2407.04622v1) | Shows smaller models can effectively evaluate larger ones. Cost-effective approach to AI oversight using model hierarchies. |
+| [Debate for Supervision](https://arxiv.org/abs/2311.08702) | Uses debate between AI systems to improve oversight. Shows how adversarial debate can surface potential issues. |
+| [Recursive Self-Critiquing](https://arxiv.org/abs/2502.04675) | Proposes recursive approach where AI systems critique their own outputs. Demonstrates scalability to superhuman AI capabilities. |
 
-1. [A General Language Assistant as a Laboratory for Alignment](https://arxiv.org/abs/2112.00861)
-2. [Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073)
-3. [The AI Alignment Paradox](https://arxiv.org/abs/2405.20806)
+### 🛡️ Safety Algorithms
+| Paper | Summary |
+|-------|---------|
+| [Homer Simpson Safety Alignment](https://arxiv.org/abs/2402.11746) | Uses task arithmetic for safety re-alignment of fine-tuned models. Novel approach to correcting unsafe behaviors post-training. |
+| [SafeInfer](https://arxiv.org/abs/2406.12274) | Implements runtime safety checks during model inference. Adaptive approach that maintains performance while ensuring safety. |
+| [Function Vectors](https://arxiv.org/abs/2310.15213) | Discovers interpretable directions in LLM representation space. Shows how to control model behavior through vector arithmetic. |
+| [Text Generation Arithmetic](https://arxiv.org/abs/2311.14479) | Extends vector arithmetic to controlled text generation. Demonstrates compositional control over model outputs. |
 
-### Scalable Oversight
+### 🔍 Mechanistic Interpretability
+| Paper | Summary |
+|-------|---------|
+| [Feed-Forward as Memory](https://arxiv.org/abs/2012.14913) | Shows transformer feed-forward layers act as key-value memories. Fundamental insight into transformer architecture. |
+| [Context Learning](https://arxiv.org/abs/1905.06316) | Analyzes how contextual representations encode sentence structure. Reveals hierarchical linguistic knowledge in embeddings. |
+| [BERT Pipeline](https://arxiv.org/abs/1905.05950) | Shows BERT learns traditional NLP pipeline stages in its layers. Maps neural representations to linguistic features. |
+| [Latent Knowledge](https://arxiv.org/abs/2212.03827) | Method for extracting knowledge from LLMs without supervision. Novel probing techniques for model understanding. |
+| [Sparse Debugging](https://arxiv.org/abs/2105.04857) | Uses sparse linear layers for interpretable networks. Enables systematic debugging of deep learning models. |
+| [Tuned Lens](https://arxiv.org/abs/2303.08112) | Tool for analyzing internal predictions in transformers. Reveals how models process information across layers. |
+| [Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html) | Mathematical framework for understanding transformer components. Systematic approach to circuit analysis. |
+| [Induction Heads](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html) | Analyzes role of induction heads in in-context learning. Shows how transformers learn patterns from context. |
 
-1. [Measuring Progress on Scalable Oversight for Large Language Models](https://arxiv.org/abs/2211.03540)
-2. [On scalable oversight with weak LLMs judging strong LLMs](https://arxiv.org/html/2407.04622v1)
-3. [Debate Helps Supervise Unreliable Experts](https://arxiv.org/abs/2311.08702)
-4. [Scalable Oversight for Superhuman AI via Recursive Self-Critiquing](https://arxiv.org/abs/2502.04675)
+### 🗑️ Machine Unlearning
+| Paper | Summary |
+|-------|---------|
+| [LLM Unlearning](https://arxiv.org/abs/2310.10683) | Methods for selective removal of knowledge from LLMs. Maintains model performance while forgetting specific information. |
+| [Embedding-Corrupted Prompts](https://arxiv.org/abs/2406.07933) | Novel unlearning approach using embedding corruption. Efficient method requiring no model retraining. |
 
-### Safety Algorithms
+### 🔐 LLM Watermarking
+| Paper | Summary |
+|-------|---------|
+| [LLM Watermarking](https://arxiv.org/abs/2301.10226) | Statistical method for watermarking LLM outputs. Provides detection guarantees with minimal impact on text quality. |
+| [Robust Watermarking](https://arxiv.org/abs/2306.17439) | Develops attack-resistant watermarking scheme. Proves theoretical bounds on watermark security. |
+| [Multi-bit Watermark](https://aclanthology.org/2024.naacl-long.224/) | Extends watermarking to encode multiple bits of information. Improves capacity while maintaining robustness. |
 
-1. [Language Models are Homer Simpson! Safety Re-Alignment of Fine-tuned Language Models through Task Arithmetic](https://arxiv.org/abs/2402.11746)
-2. [SafeInfer: Context Adaptive Decoding Time Safety Alignment for Large Language Models](https://arxiv.org/abs/2406.12274)
-3. [Function Vectors in Large Language Models](https://arxiv.org/abs/2310.15213)
-4. [Controlled Text Generation via Language Model Arithmetic](https://arxiv.org/abs/2311.14479)
-
-### Mechanistic Interpretability
-
-1. [Transformer Feed-Forward Layers Are Key-Value Memories](https://arxiv.org/abs/2012.14913)
-2. [What do you learn from context? Probing for sentence structure in contextualized word representations](https://arxiv.org/abs/1905.06316)
-3. [BERT Rediscovers the Classical NLP Pipeline](https://arxiv.org/abs/1905.05950)
-4. [Discovering Latent Knowledge in Language Models Without Supervision](https://arxiv.org/abs/2212.03827)
-5. [Leveraging Sparse Linear Layers for Debuggable Deep Networks](https://arxiv.org/abs/2105.04857)
-6. [Eliciting Latent Predictions from Transformers with the Tuned Lens](https://arxiv.org/abs/2303.08112)
-7. [A Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html#induction-heads)
-8. [In-context Learning and Induction Heads](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html)
-
-### Machine Unlearning
-
-1. [Large Language Model Unlearning](https://arxiv.org/abs/2310.10683)
-2. [Large Language Model Unlearning via Embedding-Corrupted Prompts](https://arxiv.org/abs/2406.07933)
-
-### LLM Watermarking
-
-1. [A Watermark for Large Language Models](https://arxiv.org/abs/2301.10226)
-2. [Provable Robust Watermarking for AI-Generated Text](https://arxiv.org/abs/2306.17439)
-3. [Advancing Beyond Identification: Multi-bit Watermark for Large Language Models](https://aclanthology.org/2024.naacl-long.224/)
-
-
-### Causal tracing
-1. [Locating and Editing Factual Associations in GPT](https://arxiv.org/abs/2202.05262)
-2. [Editing Factual Knowledge in Language Models](https://arxiv.org/abs/2104.08164)
+### 🔬 Causal Tracing
+| Paper | Summary |
+|-------|---------|
+| [Factual Associations](https://arxiv.org/abs/2202.05262) | Methods for locating and editing specific facts in LLMs. Uses causal tracing to identify knowledge representations. |
+| [Knowledge Editing](https://arxiv.org/abs/2104.08164) | Techniques for modifying factual knowledge in LLMs. Maintains model consistency while updating specific facts. |
